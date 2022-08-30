@@ -34,8 +34,9 @@ body {
 }
 
 .sidebar {
-  position: fixed;
   padding: 15px 20px;
+  position: fixed;
+  top: 0;
 
   grid-row: 1 / -1;
   grid-column: 1 / 2;
@@ -260,10 +261,9 @@ main p {
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: .1fr 1fr 1fr 1fr;
-  /* grid-template-rows: .1fr repeat(auto-fit, 190px); */
-  /* grid-template-columns: repeat(auto-fit, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-rows: min-content;
+  grid-auto-rows: 255px;
 }
 
 .card {
@@ -312,7 +312,7 @@ main p {
   grid-column: 2 / 3;
 
   display: grid;
-  grid-template-rows: .1fr 1fr .1fr 1fr;
+  grid-template-rows: min-content 1fr min-content 1fr;
 }
 
 .announcements,
@@ -341,6 +341,7 @@ main p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: min-content;
   font-size: .9rem;
 }
 

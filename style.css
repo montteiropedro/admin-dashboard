@@ -42,7 +42,7 @@ body {
   grid-column: 1 / 2;
   
   display: grid;
-  grid-template-rows: auto repeat(3, 1fr);
+  grid-template-rows: repeat(3, min-content) 1fr;
   row-gap: 50px;
   height: 100vh;
   width: var(--sidebar-width);
@@ -300,12 +300,17 @@ main p {
   gap: 15px;
 }
 
-.card_button {
+.card_button,
+.card_button:first-child i {
   transition: all .3s ease-in-out;
 }
 
 .card_button:hover {
   transform: scale(1.1);
+}
+
+.card_button:first-child i:hover {
+  color: goldenrod;
 }
 
 .main_aside {
